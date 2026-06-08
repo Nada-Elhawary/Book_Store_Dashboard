@@ -48,7 +48,7 @@ export default function RegisterPage() {
       const { data } = await api.post("/api/users/register", values);
       login(data.user, data.token); // Assuming backend sends token on register or we can just redirect to login
       toast.success("Account created successfully");
-      router.push("/dashboard");
+      router.push("/books");
     } catch (error: any) {
       toast.error(error.response?.data?.message || "Something went wrong");
     } finally {
